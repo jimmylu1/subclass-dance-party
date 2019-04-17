@@ -9,8 +9,9 @@ makeLargeDancer.prototype.constructor = makeLargeDancer;
 makeLargeDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.$node.addClass('square');
-  // this.$node.animate({
-  //   width: "180px",
-  //   height: "180px",
-  // });  
+  this.$node.toggle(function(){
+    $(this).animate({height:100},200);
+  },function(){
+    $(this).animate({height:10},200);
+  });
 };
